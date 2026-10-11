@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171b19">
+  <meta name="description" content="艾斯卡普镇居民登记处：留下姓名，领取你的居民档案。纯本地运行。">
+  <title>艾斯卡普镇居民登记处 · Escapement Resident Registry</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/config.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/random.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="masthead"><a class="registry-brand" href="index.html" aria-label="返回登记首页"><img id="header-emblem" alt="艾斯卡普镇镇徽" hidden><span class="brand-lockup"><span class="brand-name">Escapement</span><span class="brand-subtitle">Resident Registry</span></span></a><span class="edition">居民登记处</span></header>
+  <main>
+    <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+      <div class="intro">
+        <p class="eyebrow">THE CHRONICLES OF ESCAPEMENT</p>
+        <h1 id="welcome-title">ESCAPEMENT<span>艾斯卡普镇居民登记处</span></h1>
+        <div class="small-rule" aria-hidden="true">◆</div>
+        <p id="welcome-copy" class="intro-copy"></p>
+        <p id="welcome-instruction" class="intro-note"></p>
+        <form id="registration" novalidate>
+          <label for="nickname">居民昵称 / <span>RESIDENT NAME</span></label>
+          <input id="nickname" name="nickname" autocomplete="off" placeholder="你的名字" aria-describedby="name-help name-error" required>
+          <p id="name-help" class="input-help">同名同日，登记结果相同。</p>
+          <p id="name-error" class="error" role="alert"></p>
+          <button class="primary" type="submit">开始登记 <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+      <aside class="display" aria-label="四大区域展示">
+        <div class="display-card" aria-hidden="true"><div id="display-back-fallback"><div class="card-corner">E<br>♠</div><div class="display-inner"><p>ESCAPEMENT</p><div class="clock-mark">Ⅻ<span>✦</span>Ⅵ</div><div class="four-suits">♥ ♠ ♣ ♦</div><div class="display-caption">RESIDENT<br>REGISTRY</div><small>居民身份档案</small></div><div class="card-corner bottom">E<br>♠</div></div><img id="display-back-image" alt="" hidden></div>
+        <p class="display-foot">Your name. Your district. Your record.</p>
+      </aside>
+      <div id="district-directory" class="district-directory" aria-label="四大区域"></div>
+    </section>
+    <section id="registry" class="registry" hidden aria-labelledby="registry-title">
+      <p class="eyebrow">ESCAPEMENT / RESIDENT REGISTRY</p>
+      <h2 id="registry-title" tabindex="-1">居民登记</h2>
+      <p id="registry-message" class="registry-message" role="status" aria-live="polite"></p>
+      <div id="card-stage" class="card-stage">
+        <div id="card" class="card">
+          <button id="card-back" class="card-face card-back" aria-label="点击翻开 / REVEAL">
+            <div id="back-fallback" class="back-fallback"><span class="eyebrow">ESCAPEMENT</span><span class="back-symbol" aria-hidden="true">✦</span><span class="four-suits" aria-hidden="true">♥ ♠ ♣ ♦</span><span class="back-label">居民档案<br><small>RESIDENT REGISTRY</small></span><span class="seal-note">点击翻开 / REVEAL</span></div>
+            <img id="back-image" alt="原创居民卡背" hidden>
+          </button>
+          <article id="card-front" class="card-face card-front" aria-label="居民身份档案" aria-hidden="true" inert>
+            <div class="card-heading"><span id="front-suit" aria-hidden="true"></span><span>Escapement<br>Resident Registry</span><img id="town-emblem" alt="" hidden></div>
+            <div class="district-emblem"><span id="emblem-fallback" aria-hidden="true"></span><img id="emblem" alt="" hidden></div>
+            <div class="district-heading"><h3 id="district-name"></h3><p id="district-subtitle"></p></div>
+            <div class="resident-name"><span class="field-label">RESIDENT NAME / 居民姓名</span><p id="resident-name"></p><span class="field-label">RESIDENT ID / 居民编号</span><span id="resident-id"></span></div>
+            <dl class="record"><div><dt>OCCUPATION / <span>职业</span></dt><dd id="occupation"></dd></div><div><dt>AWAKENING STATUS / <span>觉醒状态</span></dt><dd class="awakening-row"><span id="awakening">未觉醒</span><span id="escapist-badge" hidden><img id="escapist-emblem" alt="" hidden></span></dd></div></dl>
+            <div class="card-date"><span>REGISTRATION DATE / 登记日期</span><time id="registration-date"></time></div>
+          </article>
+        </div>
+      </div>
+      <p id="flip-hint" class="flip-hint">点击翻开 / REVEAL</p>
+      <div id="result-actions" class="result-actions" hidden><button id="copy-result" class="primary">复制结果 <span aria-hidden="true">↗</span></button><button id="restart" class="secondary">重新登记</button></div>
+      <div id="manual-copy" class="manual-copy" hidden><label for="copy-text">自动复制不可用，请选中下方文字复制：</label><textarea id="copy-text" readonly rows="10"></textarea></div>
+      <p id="copy-status" class="copy-status" role="status"></p>
+    </section>
+    <noscript>请启用 JavaScript 以生成居民档案。昵称不会上传。</noscript>
+  </main>
+  <footer><span>《艾斯卡普镇纪事》 · 私人创作互动</span><span id="today"></span></footer>
+</body>
+</html>
+
+
+

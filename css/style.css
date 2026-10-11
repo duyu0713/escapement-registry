@@ -1,0 +1,147 @@
+@charset "UTF-8";
+@font-face{font-family:'Registry French Script';src:url('../assets/fonts/FRSCRIPT.TTF') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Registry Old English';src:url('../assets/fonts/OLDENGL.TTF') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Registry Galaxie';src:url('../assets/fonts/SCM-Galaxie-XII-1.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Registry Vivaldi';src:url('../assets/fonts/VIVALDII.TTF') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Registry Title';src:url('../assets/fonts/261-1.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Registry Name';src:url('../assets/fonts/XiXianTingMingTi-1.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Registry Body';src:url('../assets/fonts/NanMingTi-2.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+:root{color-scheme:dark;--bg:#171b19;--ink:#eee8da;--muted:#b5b4a6;--gold:#c3a779;--line:#45483d;--paper:#eee7d7;--serif:Georgia,'Times New Roman','Songti SC','SimSun',serif;font-family:var(--serif)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 75% 36%,#30382d 0,transparent 48%),var(--bg);color:var(--ink);min-height:100vh}button,input,textarea{font:inherit}button,a,input,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:5px}[hidden]{display:none!important}a{color:inherit;text-decoration:none}.masthead{max-width:1320px;margin:auto;min-height:93px;padding:28px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.masthead>a{font-size:27px;letter-spacing:2px}.brand-star{font-size:15px;color:var(--gold);padding:0 8px}.brand-text{font-family:Arial,sans-serif;font-size:10px;letter-spacing:2.5px;margin-left:20px;vertical-align:middle}.edition{font-size:11px;letter-spacing:2px;color:var(--muted)}main{max-width:1180px;margin:auto;padding:64px 32px 0}.welcome{display:grid;grid-template-columns:1.15fr 1fr;gap:50px 70px;align-items:center}.eyebrow{font:10px/1.7 Arial,sans-serif;letter-spacing:3px;color:var(--gold);margin:0 0 24px}h1{font-size:clamp(28px,3.5vw,47px);font-weight:400;letter-spacing:2px;margin:0;line-height:1.2}h1 span{display:block;font-size:23px;letter-spacing:5px;margin-top:19px}.small-rule{color:var(--gold);font-size:10px;display:flex;align-items:center;gap:12px;margin:30px 0 24px}.small-rule:before{content:'';width:57px;height:1px;background:var(--gold)}.intro-copy{font-size:17px;line-height:1.8;margin-bottom:10px}.intro-note{color:var(--muted);font-size:14px;line-height:1.9;margin:0 0 32px}form{max-width:390px}label{display:block;font-size:14px;margin-bottom:10px}label span{color:var(--muted);font:9px Arial,sans-serif;letter-spacing:1.8px;margin-left:12px}input,textarea{width:100%;background:#111612;border:1px solid #666656;border-radius:0;color:var(--ink);padding:14px 16px;font-size:17px}input::placeholder{color:#858a7e}.input-help{font-size:11px;color:var(--muted);line-height:1.7;margin:9px 0}.error{color:#ffc0b7;font-size:13px;margin:0;min-height:24px}.primary,.secondary{min-height:49px;padding:13px 22px;border:1px solid var(--gold);letter-spacing:2px;font-size:14px;transition:background .2s,color .2s}.primary{background:var(--gold);color:#1c201a}.primary:hover{background:#d9bd8d}.primary span{float:right;margin-left:28px}form .primary{width:100%}.secondary{background:transparent;color:var(--ink)}.secondary:hover{background:#31382d}.daily-note{font-size:11px;line-height:1.8;color:var(--muted);margin-top:19px}.daily-note>span{font-size:17px;margin-right:5px}.display{text-align:center;padding:12px 0}.display-card{position:relative;width:285px;aspect-ratio:2/3;margin:auto;background:#1d231e;border:1px solid #ad9670;border-radius:10px;transform:rotate(8deg);padding:17px;box-shadow:18px 25px 50px #070b0866}.display-inner{height:100%;border:1px solid #8b7a58;padding:25px 12px;display:flex;align-items:center;flex-direction:column;justify-content:space-around}.display-inner>p{font-size:10px;letter-spacing:4px;color:var(--gold)}.clock-mark{width:134px;height:134px;border:1px solid #bca575;border-radius:50%;outline:1px solid #6d6449;outline-offset:7px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:8px;font-size:12px;color:var(--gold)}.clock-mark span{font-size:62px;line-height:1}.four-suits{font-size:20px;letter-spacing:12px;color:var(--gold);padding-left:12px}.display-caption{font-size:23px;letter-spacing:5px;line-height:1.3}.display-inner small{font-size:10px;letter-spacing:4px;color:var(--muted)}.card-corner{position:absolute;top:11px;left:10px;background:#1d231e;padding:4px;color:var(--gold);font-size:18px}.card-corner.bottom{top:auto;left:auto;bottom:11px;right:10px;transform:rotate(180deg)}.display-foot{font:9px Arial,sans-serif;letter-spacing:2px;color:var(--muted);margin-top:43px}.district-directory{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:25px 0;gap:16px}.district-item{display:flex;align-items:center;gap:16px}.directory-suit{font-size:33px;color:var(--district-light)}.district-item strong{font-size:15px;letter-spacing:1.8px;font-weight:400}.district-item small{display:block;font-size:11px;color:var(--muted);margin-top:8px;letter-spacing:1px}.roswyn{--district:#842f38;--district-light:#df888d}.vesper{--district:#303b40;--district-light:#bdc3c2}.cloverden{--district:#305f48;--district-light:#98bd9b}.diamora{--district:#315986;--district-light:#93b7e1}footer{max-width:1180px;margin:35px auto 0;padding:0 32px 27px;display:flex;justify-content:space-between;gap:14px;color:var(--muted);font-size:10px;letter-spacing:1px;line-height:1.8}.registry{text-align:center;padding-bottom:8px}.registry .eyebrow{margin-bottom:12px}h2{font-size:25px;letter-spacing:4px;font-weight:400;margin:0}.registry-message{color:var(--gold);font-size:13px;min-height:24px;line-height:1.8;margin:13px 0 24px}.card-stage{perspective:1600px;width:min(100%,390px);margin:auto}.card{position:relative;display:grid;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.65,.2,1)}.card.flipped{transform:rotateY(180deg)}.card-face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;overflow:hidden;min-width:0;min-height:580px;box-shadow:0 18px 60px #060a0866}.card-back{position:relative;display:block;padding:13px;background:#101411;border:1px solid var(--gold);color:var(--ink);width:100%}.back-fallback{position:absolute;inset:15px;border:1px solid #8d7a58;display:flex;flex-direction:column;align-items:center;justify-content:space-around;padding:32px 15px}.back-fallback .eyebrow{margin:0}.back-symbol{font-size:100px;color:var(--gold)}.back-label{font-size:24px;letter-spacing:5px;line-height:1.7}.back-label small{font:11px Arial,sans-serif;letter-spacing:3px}.seal-note{font-size:11px;letter-spacing:2px;color:var(--gold)}#back-image{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.card-front{transform:rotateY(180deg);text-align:left;padding:23px 25px 15px;background:var(--paper);color:#262b27;border:1px solid #c9b999;outline:1px solid #aa9872;outline-offset:-9px;overflow-wrap:anywhere}.card-heading{display:flex;align-items:center;gap:9px;color:var(--district);padding-bottom:12px;border-bottom:1px solid #b7ab91}.card-heading>span:first-child{font-size:34px;line-height:1}.card-heading>span:nth-child(2){font:8px/1.6 Arial,sans-serif;letter-spacing:2px}.district-heading{text-align:center;margin:0 0 22px;color:var(--district)}.district-heading h3{font-size:29px;letter-spacing:3px;font-weight:400;text-transform:uppercase;margin:0;line-height:1.15}.district-heading p{font-size:12px;letter-spacing:2px;margin:9px 0 0}.field-label{font:9px/1.7 Arial,sans-serif;letter-spacing:1.3px;color:#615d52}.resident-name{padding-bottom:16px;border-bottom:1px solid #b7ab91}.resident-name p{font-size:28px;margin:8px 0 16px;line-height:1.4}.resident-name>span:last-child{display:block;margin-top:5px;font:11px/1.5 monospace;letter-spacing:.7px;color:#615d52}.record{margin:0}.record>div{padding:17px 0;border-bottom:1px solid #c4b99f}.record dt{font:9px/1.5 Arial,sans-serif;letter-spacing:1px;color:#615d52}.record dt span{margin-left:7px;font-size:10px;letter-spacing:0}.record dd{margin:7px 0 0;font-size:16px;line-height:1.7}#awakening{font-size:15px}#awakening.awakened{color:#715022;font-weight:bold;letter-spacing:1px}.card-date{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font:9px/1.8 Arial,sans-serif;letter-spacing:.6px;padding-top:13px}.card-disclaimer{font-size:9px;text-align:center;color:#746a56;margin:12px 0 0}.flip-hint{font-size:12px;color:var(--muted);margin:23px 0}.result-actions{display:flex;gap:12px;justify-content:center;margin-top:25px}.copy-status{min-height:20px;font-size:12px;color:var(--gold)}.manual-copy{max-width:540px;margin:20px auto;text-align:left}.manual-copy label{font-size:13px}.manual-copy textarea{font-size:14px;line-height:1.7}.anomaly{animation:record-anomaly .35s 2}@keyframes record-anomaly{0%,100%{filter:none}35%{filter:sepia(.8);translate:2px 0}70%{translate:-2px 0}}
+@media(min-width:1400px){main{padding-top:85px}.welcome{row-gap:65px}}
+@media(max-width:760px){.masthead{min-height:74px;padding:20px 24px}.edition{display:none}.brand-text{font-size:9px;margin-left:10px}main{padding:40px 24px 0}.welcome{gap:36px;grid-template-columns:1fr}.intro{max-width:480px;margin:auto;width:100%}h1{font-size:clamp(27px,7vw,42px)}h1 span{font-size:21px;letter-spacing:3px}.display{display:none}form{max-width:none}.district-directory{grid-template-columns:repeat(2,1fr);gap:25px 12px;padding:24px 0}.district-item{gap:10px}.district-item strong{font-size:12px;letter-spacing:1px}.district-item small{font-size:10px}.directory-suit{font-size:27px}footer{flex-direction:column;gap:4px;margin-top:25px;padding:0 24px 20px}.registry .eyebrow{font-size:9px;letter-spacing:1.8px}.card-front{padding:22px 22px 15px}.district-heading h3{font-size:27px;letter-spacing:2px}.result-actions{gap:10px}.result-actions button{padding:13px 16px;letter-spacing:1px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.district-emblem{display:flex;align-items:center;justify-content:center;height:124px;margin:18px 0 14px;color:var(--district)}.district-emblem img{display:block;width:124px;height:124px;object-fit:contain}.district-emblem>span{font-size:88px;line-height:1}.card-heading{justify-content:center}.resident-name{text-align:center}.record dd{font-size:18px}.card-disclaimer{margin-top:16px}@media(max-width:380px){.district-heading h3{font-size:24px;letter-spacing:1px}.card-date{font-size:9px;letter-spacing:0}}
+
+/* First art pass: fonts and artwork can be tuned here without changing draw logic. */
+:root {
+  --font-english-title: 'Registry Galaxie', Georgia, 'Times New Roman', serif;
+  --font-decoration: 'Registry Vivaldi', Georgia, serif;
+  --font-chinese-title: 'Registry Title', 'Songti SC', SimSun, serif;
+  --font-name: 'Registry Name', 'Songti SC', SimSun, serif;
+  --font-body: 'Registry Body', 'Songti SC', SimSun, serif;
+  font-family: var(--font-body);
+}
+h1, .district-heading h3, .district-item strong { font-family: var(--font-english-title); }
+h1 span, #registry-title { font-family: var(--font-chinese-title); line-height: 1.6; }
+.intro, .display, .district-item, .district-item>div { min-width: 0; }
+h1 { font-size: clamp(28px, 3.3vw, 44px); letter-spacing: 1px; }
+.display-foot { font-family: var(--font-decoration); font-size: 23px; line-height: 1.5; letter-spacing: .3px; }
+#resident-name { font-family: var(--font-name); font-size: 32px; line-height: 1.5; }
+.record dt span { font-family: var(--font-name); font-size: 12px; }
+.record dd, .district-heading p { font-family: var(--font-body); }
+#awakening { font-family: Georgia, 'Registry Body', 'Songti SC', SimSun, serif; }
+#display-back-fallback { height: 100%; }
+.display-card.art-loaded { aspect-ratio: var(--back-ratio); padding: 0; border: 0; border-radius: 0; background: transparent; }
+#display-back-image { display: block; width: 100%; height: auto; object-fit: contain; }
+.card-back.art-loaded { aspect-ratio: var(--back-ratio); align-self: center; min-height: 0; padding: 0; border: 0; border-radius: 0; background: transparent; overflow: visible; }
+.card-back.art-loaded #back-image { position: static; display: block; width: 100%; height: auto; object-fit: contain; }
+.card-heading { min-height: 53px; }
+#town-emblem { order: -1; width: 43px; height: 43px; object-fit: contain; }
+.district-emblem { height: 132px; margin: 14px 0 12px; }
+/* Optical sizing compensates for transparent margins and the slender spade/diamond. */
+.roswyn { --emblem-size: 134px; }
+.vesper { --emblem-size: 145px; }
+.cloverden { --emblem-size: 130px; }
+.diamora { --emblem-size: 144px; }
+.district-emblem img { width: var(--emblem-size); height: var(--emblem-size); max-width: 100%; object-fit: contain; }
+.district-heading { margin-bottom: 20px; }
+.district-heading h3 { font-size: 29px; letter-spacing: 1.5px; line-height: 1.4; }
+.awakening-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 30px; }
+#escapist-badge.art-loaded { flex: 0 0 49px; width: 49px; height: 63px; display: flex; align-items: center; justify-content: center; background: var(--bg); border: 1px solid #897854; border-radius: 3px; }
+#escapist-emblem { width: 57px; height: 57px; object-fit: contain; flex-shrink: 0; }
+.card-front { padding-bottom: 23px; }
+@media(max-width:760px) {
+  h1 { font-size: clamp(25px, 7vw, 40px); letter-spacing: .5px; }
+  h1 span { font-size: 21px; letter-spacing: 2px; }
+  .district-item strong { font-size: 13px; letter-spacing: .3px; }
+  .district-heading h3 { font-size: 27px; letter-spacing: 1px; }
+}
+@media(max-width:380px) {
+  .district-heading h3 { font-size: 23px; letter-spacing: .5px; }
+  #resident-name { font-size: 30px; }
+  .district-item strong { font-size: 12px; }
+}
+/* Second pass: a unified serif register for navigation and English labels. */
+:root { --font-english-text: Georgia, 'Times New Roman', serif; }
+.masthead .registry-brand { display: flex; align-items: center; gap: 12px; letter-spacing: 0; }
+#header-emblem { width: 43px; height: 43px; padding: 3px; object-fit: contain; background: var(--paper); border-radius: 3px; }
+.brand-lockup { display: flex; flex-direction: column; gap: 5px; font-family: var(--font-english-text); }
+.brand-name { font-size: 20px; line-height: 1.1; letter-spacing: 1.2px; }
+.brand-subtitle { font-size: 9px; line-height: 1.3; letter-spacing: 1.2px; color: var(--muted); }
+.eyebrow, .registry .eyebrow { font-family: var(--font-english-text); font-size: 11px; letter-spacing: 1.2px; }
+label span { font-family: var(--font-english-text); margin-left: 0; letter-spacing: 1px; }
+.card-heading>span:nth-child(2), .field-label, .record dt, .back-label small { font-family: var(--font-english-text), var(--font-body); }
+.intro-copy { margin-bottom: 8px; }
+.intro-note { font-size: 16px; line-height: 1.8; }
+@media(max-width:380px) {
+  .brand-name { font-size: 18px; }
+  .brand-subtitle { font-size: 8px; }
+  .masthead .registry-brand { gap: 10px; }
+  .eyebrow, .registry .eyebrow { font-size: 10px; letter-spacing: .7px; }
+}
+/* Scoped font refinement: official marks and card field labels only. */
+:root {
+  --font-official-frscript: 'Registry French Script', Georgia, 'Times New Roman', serif;
+  --font-official-oldengl: 'Registry Old English', Georgia, 'Times New Roman', serif;
+  /* Compare by changing only this variable; keep all typography metrics identical. */
+  --font-official-mark: var(--font-official-oldengl);
+  --font-field-label: 'Courier New', 'Registry Body', 'Songti SC', SimSun, monospace;
+}
+.masthead .brand-lockup { font-family: var(--font-official-mark); gap: 3px; font-weight: 400; }
+.masthead .brand-name { font-size: 26px; letter-spacing: .3px; line-height: 1.15; }
+.masthead .brand-subtitle { font-size: 17px; letter-spacing: .3px; line-height: 1.2; }
+.card-heading>span:nth-child(2) {
+  font-family: var(--font-official-mark);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: .35px;
+  line-height: 1.5;
+}
+.card-front .field-label, .card-front .record dt, .card-front .record dt span, .card-front .card-date>span {
+  font-family: var(--font-field-label);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .25px;
+  line-height: 1.7;
+  color: #615d52;
+}
+.card-front .record dt span { margin-left: 0; }
+@media(max-width:380px) {
+  .masthead .brand-name { font-size: 24px; }
+  .masthead .brand-subtitle { font-size: 16px; }
+  .card-heading>span:nth-child(2) { font-size: 14px; letter-spacing: 0; }
+}
+
+/* Homepage district artwork: shared slot, optical sizing, existing grid retained. */
+.directory-mark { width: 56px; height: 56px; flex: 0 0 56px; display: flex; align-items: center; justify-content: center; }
+.directory-emblem { display: block; width: var(--directory-emblem-size, 54px); height: var(--directory-emblem-size, 54px); object-fit: contain; }
+.roswyn { --directory-emblem-size: 54px; }
+.vesper { --directory-emblem-size: 58px; }
+.cloverden { --directory-emblem-size: 52px; }
+.diamora { --directory-emblem-size: 58px; }
+@media(max-width:760px) {
+  .district-item { gap: 8px; }
+  .directory-mark { width: 44px; height: 48px; flex-basis: 44px; }
+  .directory-emblem { width: calc(var(--directory-emblem-size) * .82); height: calc(var(--directory-emblem-size) * .82); }
+}
+@media(max-width:380px) {
+  .district-item { gap: 6px; }
+  .directory-mark { width: 36px; height: 42px; flex-basis: 36px; }
+  .directory-emblem { width: calc(var(--directory-emblem-size) * .72); height: calc(var(--directory-emblem-size) * .72); }
+}
+
+/* Natural spacing and original casing for both official-mark font candidates. */
+.masthead .brand-name, .masthead .brand-subtitle, .card-heading>span:nth-child(2) {
+  text-transform: none;
+  letter-spacing: 0;
+}
+.masthead .brand-name { line-height: 1.2; }
+.masthead .brand-subtitle { line-height: 1.3; }
+.card-heading>span:nth-child(2) { line-height: 1.4; }
+/* Keep the card's emblem/text anchor identical when comparing font families. */
+.card-heading>span:nth-child(2) { width: 150px; max-width: calc(100% - 52px); }
+
+
+
