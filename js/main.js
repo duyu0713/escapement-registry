@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  const { config, data, random } = globalThis.Escapement;
+  const { config, data, random, registry } = globalThis.Escapement;
   const $ = id => document.getElementById(id);
   let profile = null;
   let phase = 'welcome';
@@ -55,7 +55,7 @@
   loadArt($('escapist-emblem'), null, config.assets.escapistEmblem, 'Escapist 逃逸者纹章');
   function renderProfile(p) {
     const d = config.districts.find(d => d.id === p.districtId);
-    $('card-front').className = `card-face card-front ${d.id}`;
+    $('card-front').className = `card-face card-front ${d.id}${p.preset ? ' official-escapist' : ''}`;
     $('front-suit').textContent = d.suit;
     $('emblem-fallback').textContent = d.suit;
     loadArt($('emblem'), $('emblem-fallback'), config.assets.emblems[d.id], `${d.name} 原创纹章`);
@@ -64,16 +64,22 @@
     $('resident-name').textContent = p.name;
     $('resident-id').textContent = p.residentId;
     $('occupation').textContent = p.occupation;
-    $('awakening').textContent = '未觉醒';
-    $('awakening').className = '';
-    $('escapist-badge').hidden = true;
-    $('registration-date').textContent = `${p.date} / UTC+8`;
-    $('registration-date').dateTime = p.date;
+    $('awakening').textContent = p.preset ? '已觉醒 / ESCAPIST' : '未觉醒';
+    $('awakening').className = p.preset ? 'awakened' : '';
+    $('escapist-badge').hidden = !p.preset;
+    $('ability-card-row').hidden = !p.preset;
+    $('ability-row').hidden = !p.preset;
+    $('ability-card').textContent = p.preset ? p.abilityCard : '';
+    $('ability').textContent = p.preset ? p.ability : '';
+    $('ability-en').textContent = p.preset ? p.abilityEn : '';
+    $('registration-date').textContent = p.date ? `${p.date} / UTC+8` : '■';
+    if (p.date) $('registration-date').dateTime = p.date;
+    else $('registration-date').removeAttribute('datetime');
   }
   $('registration').addEventListener('submit', event => {
     event.preventDefault();
     try {
-      profile = random.generateProfile($('nickname').value, random.dateUTC8(), config, data);
+      profile = registry.resolveProfile($('nickname').value, random.dateUTC8(), config, data);
     } catch (error) {
       $('name-error').textContent = error.message;
       $('nickname').setAttribute('aria-invalid', 'true');
@@ -95,26 +101,26 @@
     $('registry-title').focus();
     $('card').classList.add('flipped');
     $('flip-hint').hidden = true;
-    if (profile.awakened) {
+    if (profile.awakened && !profile.preset) {
       $('registry-message').textContent = config.copy.anomaly;
       $('card-stage').classList.add('anomaly');
     }
     await delay(reduceMotion() ? 0 : config.animation.flipMs);
     $('card-front').removeAttribute('inert'); $('card-front').setAttribute('aria-hidden', 'false');
-    if (profile.awakened) {
+    if (profile.awakened && !profile.preset) {
       await delay(config.animation.anomalyMs);
       $('awakening').textContent = '已觉醒 / ESCAPIST';
       $('awakening').className = 'awakened';
       $('escapist-badge').hidden = false;
     }
     $('card-stage').classList.remove('anomaly');
-    $('registry-message').textContent = profile.awakened ? config.copy.awakened : config.copy.ordinary;
+    $('registry-message').textContent = profile.awakened && !profile.preset ? config.copy.awakened : config.copy.ordinary;
     $('result-actions').hidden = false;
     phase = 'revealed';
   });
   $('copy-result').addEventListener('click', async () => {
     if (phase !== 'revealed') return;
-    const text = random.profileText(profile, config);
+    const text = registry.profileText(profile, config);
     const activeProfile = profile;
     try {
       if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');

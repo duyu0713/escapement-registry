@@ -49,7 +49,7 @@ h1 { font-size: clamp(28px, 3.3vw, 44px); letter-spacing: 1px; }
 .district-heading { margin-bottom: 20px; }
 .district-heading h3 { font-size: 29px; letter-spacing: 1.5px; line-height: 1.4; }
 .awakening-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 30px; }
-#escapist-badge.art-loaded { flex: 0 0 49px; width: 49px; height: 63px; display: flex; align-items: center; justify-content: center; background: var(--bg); border: 1px solid #897854; border-radius: 3px; }
+#escapist-badge.art-loaded { flex: 0 0 49px; width: 49px; height: 63px; display: flex; align-items: center; justify-content: center; background: transparent; border: 0; }
 #escapist-emblem { width: 57px; height: 57px; object-fit: contain; flex-shrink: 0; }
 .card-front { padding-bottom: 23px; }
 @media(max-width:760px) {
@@ -145,3 +145,31 @@ label span { font-family: var(--font-english-text); margin-left: 0; letter-spaci
 
 
 
+/* Preset-only fields inherit the existing archive rows; ordinary cards stay unchanged. */
+#ability-en { display: block; margin-top: 3px; font-family: var(--font-english-text); font-size: 13px; line-height: 1.6; color: #615d52; }
+#ability-card { font-family: Georgia, 'Times New Roman', serif; }
+
+/* Canonical Escapist fronts only; randomized residents (even awakened) retain paper. */
+.card-front.official-escapist {
+  --archive-text: #F0E7D8;
+  --archive-muted: #C2B9B4;
+  --archive-gold: #D8C39B;
+  background: #403A39;
+  color: var(--archive-text);
+  border-color: var(--archive-gold);
+  outline-color: var(--archive-gold);
+}
+.official-escapist .card-heading,
+.official-escapist .district-heading,
+.official-escapist .district-emblem,
+.official-escapist #awakening.awakened { color: var(--archive-gold); }
+.official-escapist .card-heading,
+.official-escapist .resident-name,
+.official-escapist .record>div { border-color: var(--archive-gold); }
+.card-front.official-escapist .field-label,
+.card-front.official-escapist .record dt,
+.card-front.official-escapist .record dt span,
+.card-front.official-escapist .card-date>span,
+.official-escapist #resident-id,
+.official-escapist .district-heading p,
+.official-escapist #ability-en { color: var(--archive-muted); }
